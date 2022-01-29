@@ -1,0 +1,87 @@
+@import "../../styles/variables.scss";
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .burgermenu {
+    position: relative;
+    top: -16px;
+  }
+}
+.burger {
+  position: absolute;
+  top: 5%;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 35px;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+
+  &:focus {
+    outline: none;
+  }
+
+  div {
+    width: 2rem;
+    height: 0.25rem;
+    // background: ${({ open }) => open ? '#0D0C1D' : '#EFFFFA'};
+    background: $green;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+  }
+}
+.open {
+  div {
+    &:first-child {
+      //   transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
+      transform: rotate(45deg);
+    }
+
+    &:nth-child(2) {
+      //   opacity: ${({ open }) => open ? '0' : '1'};
+      //   transform: ${({ open }) => open ? 'translateX(20px)' : 'translateX(0)'};
+      opacity: 0;
+      transform: translateX(20px);
+    }
+
+    &:nth-child(3) {
+      transform: rotate(-45deg);
+      //   transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
+    }
+  }
+}
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  background: #fff;
+  transform: translateX(100%);
+  //   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
+  max-height: 400px;
+  overflow-y: auto;
+  text-align: left;
+  padding: 20px;
+  padding-left: 50px !important;
+  position: absolute;
+  top: 100px;
+  right: 0;
+  transition: transform 0.3s ease-in-out;
+  width: 100%;
+
+  a {
+    margin-bottom: 10px;
+  }
+}
+.openMenu {
+  transform: translateX(0);
+}

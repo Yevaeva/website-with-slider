@@ -1,0 +1,41 @@
+@import "./variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+}
+.wrapper {
+  max-width: 1200px;
+  margin: auto;
+  padding: 10px;
+  color: $black;
+  // z-index: 999;
+}
+.mainbtn {
+  background-color: $green;
+  color: #fff;
+  box-shadow: 0 20px 30px 0 rgb(12 0 46 / 10%);
+  border-radius: 45px;
+  margin: 20px 0 20px;
+  padding: 14px 42px;
+  transition: all 0.2s linear;
+  font-weight: 500;
+  cursor: pointer;
+  border: 0;
+
+  &:hover {
+    color: #16ac59 !important;
+    background: #fff;
+  }
+}
+
+.slick-slide {
+  > div {
+    display: flex;
+    justify-content: center;
+  }
+}

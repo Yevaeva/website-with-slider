@@ -1,0 +1,19 @@
+@import "../../styles/variables.scss";
+
+.slider {
+  width: 90%;
+}
+.arrow {
+  border-radius: 50%;
+  display: block;
+  &::before {
+    background: none;
+    color: $green;
+    opacity: 1;
+  }
+}
+
+.iconbox {
+  width: 120px !important;
+  height: 72px;
+}
