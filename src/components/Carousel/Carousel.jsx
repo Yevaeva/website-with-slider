@@ -15,7 +15,8 @@ const dataSlider = [comment1, comment2, comment3, comment4, comment5, comment6];
 
 const Carousel = () => {
   const [slideIndex, setSlideIndex] = useState(2);
-  const [nextSlideIndex, setNextSlideIndex] = useState(null);
+  const [next, setNext] = useState(false);
+  const [prev, setPrev] = useState(false);
 
   useEffect(() => {
     const timeout = setInterval(() => {
@@ -25,26 +26,34 @@ const Carousel = () => {
   });
 
   const nextSlide = () => {
-    setSlideIndex(slideIndex + 1);
-    setNextSlideIndex(null);
     if (slideIndex === dataSlider.length) {
       setSlideIndex(1);
-      setNextSlideIndex(2);
-    }
-    if (slideIndex === dataSlider.length - 1) {
-      setNextSlideIndex(1);
+      setNext(false);
+      setPrev(true);
+    } else if (slideIndex === dataSlider.length - 1) {
+      setSlideIndex(slideIndex + 1);
+      setNext(true);
+      setPrev(false);
+    } else {
+      setSlideIndex(slideIndex + 1);
+      setNext(false);
+      setPrev(false);
     }
   };
 
   const prevSlide = () => {
-    setSlideIndex(slideIndex - 1);
-    setNextSlideIndex(null);
     if (slideIndex === 1) {
       setSlideIndex(dataSlider.length);
-      setNextSlideIndex(1);
-    }
-    if (slideIndex === 2) {
-      setNextSlideIndex(2);
+      setNext(true);
+      setPrev(false);
+    } else if (slideIndex === 2) {
+      setSlideIndex(slideIndex - 1);
+      setNext(false);
+      setPrev(true);
+    } else {
+      setSlideIndex(slideIndex - 1);
+      setNext(false);
+      setPrev(false);
     }
   };
 
@@ -59,10 +68,9 @@ const Carousel = () => {
                 slideIndex === index + 1
                   ? "slide active-anim"
                   : slideIndex === index + 2 ||
-                    (nextSlideIndex === 2 && index === arr.length - 1)
+                    (prev && index === arr.length - 1)
                   ? "slide prevsibling"
-                  : (nextSlideIndex === 1 && index === 0) ||
-                    slideIndex === index
+                  : (next && index === 0) || slideIndex === index
                   ? "slide nextsibling"
                   : "slide"
               }
