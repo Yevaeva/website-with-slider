@@ -1,13 +1,13 @@
 import * as React from "react";
-import review1 from "../../images/review1.svg";
-import review2 from "../../images/review2.svg";
-import review3 from "../../images/review3.svg";
-import review4 from "../../images/review4.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { Col, Row } from "react-bootstrap";
 import "./ReviewsStyle.scss";
 import Carousel from "../Carousel/Carousel";
+import review1 from "../../images/review1.svg";
+import review2 from "../../images/review2.svg";
+import review3 from "../../images/review3.svg";
+import review4 from "../../images/review4.svg";
 
 const reviews = [
   {
@@ -31,7 +31,7 @@ const reviews = [
 function Reviews() {
   return (
     <Row className="my-5 py-5">
-      <Col sm={12} lg={5} className="d-flex flex-wrap mb-sm-5 reviewCont">
+      <Col sm={12} lg={5} className="d-flex flex-wrap mb-5 reviewCont">
         {reviews.map((review, i) => {
           return (
             <Col key={i} sm={6} xs={12} className="singleReview">

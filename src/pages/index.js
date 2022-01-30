@@ -9,7 +9,6 @@ import Slider from "../components/Slider/Slider";
 import Reviews from "../components/Reviews/Reviews";
 import Navbar from "../components/Navbar/Navbar";
 
-// markup
 const IndexPage = () => {
   return (
     <main>

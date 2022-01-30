@@ -1,6 +1,7 @@
 import * as React from "react";
 import Slide from "react-slick";
 import CustomArrow from "./CustomArrow";
+import { Col } from "react-bootstrap";
 import "./SliderStyle.scss";
 import wordpress from "../../images/wordpress.png";
 import shopify from "../../images/shopify.png";
@@ -11,7 +12,6 @@ import bigcommerce from "../../images/bigcommerce.png";
 import prestashop from "../../images/prestashop.png";
 import wix from "../../images/wix.png";
 import woocommerce from "../../images/woocommerce.png";
-import { Col } from "react-bootstrap";
 
 const settings = {
   infinite: true,

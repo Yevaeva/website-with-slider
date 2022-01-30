@@ -2,13 +2,14 @@ import { Link } from "gatsby";
 import * as React from "react";
 import { useState, useEffect } from "react";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
+import { useMediaQuery } from "../../helpers/useMediaQueryHook";
 import "./NavBarStyle.scss";
 import logo from "../../images/hexometer-logo.svg";
-import { useMediaQuery } from "../../helpers/useMediaQueryHook";
 
 const Navbar = () => {
   let [scroll, setScroll] = useState(false);
   let isPageWide = useMediaQuery("(min-width: 1200px)");
+
   useEffect(() => {
     document.addEventListener("scroll", () => {
       if (window.scrollY > 20) {
@@ -21,9 +22,9 @@ const Navbar = () => {
   return (
     <header className={scroll ? "shadowNav" : ""}>
       <div className="wrapper navWrapper justify-content-xl-between justify-content-around">
-        <a href="https://hexometer.com/">
+        <Link to="/">
           <img src={logo} alt="logo" />
-        </a>
+        </Link>
         {isPageWide ? (
           <>
             <nav className="nav">
