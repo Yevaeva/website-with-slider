@@ -3,7 +3,7 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
 import { useMediaQuery } from "../../helpers/useMediaQueryHook";
-import "./NavBarStyle.scss";
+import "./NavbarStyle.scss";
 import logo from "../../images/hexometer-logo.svg";
 
 const Navbar = () => {
