@@ -19,8 +19,7 @@
   height: 200px;
   &:hover {
     .btn-slide {
-      visibility: visible;
-      background: $green;
+      opacity: 1;
     }
   }
 }
@@ -79,7 +78,7 @@
   height: 40px;
   border-radius: 50%;
   border: 0;
-  background: transparent;
+  background: $green;
   color: white;
   position: absolute;
   display: flex;
@@ -87,8 +86,8 @@
   align-items: center;
   cursor: pointer;
   font-size: 18px;
-  visibility: hidden;
   transition: all ease-in-out 0.4s;
+  opacity: 0;
   @media only screen and (max-width: 500px) {
     width: 30px;
     height: 30px;
